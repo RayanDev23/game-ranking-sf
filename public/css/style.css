@@ -1,0 +1,365 @@
+body{
+    perspective: 1000px;
+    min-height: 100vh;
+}
+
+p{
+    color: white;
+}
+
+.form-jeu{
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+form div{
+    display: flex;
+    flex-direction: column;
+}
+
+label{
+    color: rgb(251 146 60)
+}
+
+form input{
+    padding: .5rem;
+}
+
+form button{
+background: green!important;
+  color: white;
+  padding: .5rem;
+  margin: 1rem 0;
+}
+
+.checkbox div{
+display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 1rem;
+  align-items: center;
+}
+
+#jeu_image{
+    color: rgb(251 146 60)
+}
+
+.card {
+    background-position: center;
+    transition: all 0.5s ease;
+    overflow: hidden; /* Pour cacher les parties de l'image qui dépassent */
+
+    box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(128, 128, 128, 0.2588235294);
+}
+
+.card img {
+    object-position: left;
+    transition: .5s;
+    width: 100%; /* Ajustez selon la largeur initiale de vos images */
+}
+
+.card:hover {
+    background-position: 80%;
+    transform: rotate3d(1, 1, 1, -20deg);
+}
+
+.card:hover img {
+    object-position: right;
+}
+
+.icone-platine{
+    width: 50px!important;
+    height: auto;
+
+position: absolute;
+  top: 7px;
+  left: 5px;
+  background: black;
+  border-radius: 8px;
+  padding: .25rem;
+}
+
+.jeu-terminer{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 0.2rem .35rem;
+}
+
+/********************************MENU********************************/
+
+
+
+#menu-js .fa-2x {
+font-size: 2em;
+}
+#menu-js .fa {
+position: relative;
+display: table-cell;
+width: 60px;
+height: 36px;
+text-align: center;
+vertical-align: middle;
+font-size:20px;
+}
+
+.mail .fa{
+  position: relative;
+display: table-cell;
+width: 60px;
+height: 36px;
+text-align: center;
+vertical-align: middle;
+font-size:20px;
+}
+
+
+.main-menu:hover,nav.main-menu.expanded {
+width:250px;
+overflow:visible;
+}
+
+.main-menu {
+background: #000;
+border-right:1px solid;
+@include border-primary-color;
+position:absolute;
+top:0;
+bottom:0;
+height:100%;
+left:0;
+width:60px;
+overflow:hidden;
+-webkit-transition:width .05s linear;
+transition:width .05s linear;
+-webkit-transform:translateZ(0) scale(1,1);
+z-index:1;
+scroll-behavior: smooth;
+}
+
+.main-menu>ul {
+margin:7px 0;
+}
+
+.main-menu li {
+position:relative;
+display:block;
+width:250px;
+}
+
+.main-menu li>a {
+position:relative;
+display:table;
+border-collapse:collapse;
+border-spacing:0;
+@include primary-color;
+font-size: 14px;
+text-decoration:none;
+-webkit-transform:translateZ(0) scale(1,1);
+-webkit-transition:all .1s linear;
+transition:all .1s linear;
+font-size: 18px;
+}
+
+.main-menu .nav-icon {
+position:relative;
+display:table-cell;
+width:60px;
+height:36px;
+text-align:center;
+vertical-align:middle;
+font-size:18px;
+}
+
+.main-menu .nav-text {
+position:relative;
+display:table-cell;
+vertical-align:middle;
+width:190px;
+
+}
+
+.main-menu>ul.logout {
+position:absolute;
+left:0;
+bottom:0;
+}
+
+.no-touch .scrollable.hover {
+overflow-y:hidden;
+}
+
+.no-touch .scrollable.hover:hover {
+overflow-y:auto;
+overflow:visible;
+}
+
+a:hover,a:focus {
+text-decoration:none;
+}
+
+nav {
+-webkit-user-select:none;
+-moz-user-select:none;
+-ms-user-select:none;
+-o-user-select:none;
+user-select:none;
+}
+
+nav ul,nav li {
+outline:0;
+margin:0;
+padding:0;
+}
+.main-menu li:hover>a,nav.main-menu li.active>a,.dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus,.dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus,.no-touch .dashboard-page nav.dashboard-menu ul li:hover a,.dashboard-page nav.dashboard-menu ul li.active a {
+color:#fff;
+
+}
+.area {
+float: left;
+background: #e2e2e2;
+width: 100%;
+height: 100%;
+}
+
+/* Styles pour cacher le sous-menu par défaut */
+.sub-menu {
+  display: none;
+  
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  transition: display 0.2s ease-in-out;
+}
+
+
+
+.sub-menu a{
+  width: 100%;
+}
+
+.sub-menu li a i{
+  font-size: 20px;
+}
+
+.sub-menu li a{
+  display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    padding: .5rem 0;
+}
+
+.slides-text:hover .sub-menu{
+display: block;
+
+}
+
+
+
+/**************************************************************** show ****************************************************************/
+
+.image-jeu img{
+    height: 500px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.icone-platine-show{
+    width: 50px;
+  height: auto!important;
+}
+
+.set-size {
+  font-size: 10em;
+}
+
+
+.pie-wrapper {
+  height: 1em;
+  width: 1em;
+  float: left;
+  margin: 15px;
+  position: relative;
+}
+.pie-wrapper:nth-child(3n+1) {
+  clear: both;
+}
+.pie-wrapper .pie {
+  height: 100%;
+  width: 100%;
+  clip: rect(0, 1em, 1em, 0.5em);
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+.pie-wrapper .pie .half-circle {
+  height: 100%;
+  width: 100%;
+  border: 0.1em solid rgb(251 146 60);
+  border-radius: 50%;
+  clip: rect(0, 0.5em, 1em, 0);
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+.pie-wrapper .label {
+  background: #34495e;
+  border-radius: 50%;
+  bottom: 0.4em;
+  color: #ecf0f1;
+  cursor: default;
+  display: block;
+  font-size: 0.25em;
+  left: 0.4em;
+  line-height: 2.8em;
+  position: absolute;
+  right: 0.4em;
+  text-align: center;
+  top: 0.4em;
+}
+.pie-wrapper .label .smaller {
+  color: #bdc3c7;
+  font-size: 0.45em;
+  padding-bottom: 20px;
+  vertical-align: super;
+}
+.pie-wrapper .shadow {
+  height: 100%;
+  width: 100%;
+  border: 0.1em solid #bdc3c7;
+  border-radius: 50%;
+}
+.pie-wrapper.style-2 .label {
+  background: none;
+  color: #7f8c8d;
+}
+.pie-wrapper.style-2 .label .smaller {
+  color: #bdc3c7;
+}
+.pie-wrapper.progress-30 .pie {
+  clip: rect(auto, auto, auto, auto);
+}
+.pie-wrapper.progress-30 .pie .half-circle {
+  border-color: rgb(251 146 60);
+}
+.pie-wrapper.progress-30 .pie .left-side {
+  transform: rotate(252deg);
+}
+
+.pie-wrapper.progress-30 .pie .right-side {
+  transform: rotate(180deg);
+}

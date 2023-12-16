@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter jeu{% endblock %}
+
+{% block body %}
+{% if edit %}
+<h1 class="text-2xl text-center my-1 text-orange-400">Editer un jeu</h1>
+{% else %}
+<h1 class="text-2xl text-center my-1 text-orange-400">Ajouter un jeu</h1>
+{% endif %}
+
+<div class="form-jeu">
+
+    {{ form_start(formAddJeu) }}
+
+    {{ form_row(formAddJeu.Titre) }}
+    {{ form_row(formAddJeu.categorie) }}
+    {{ form_row(formAddJeu.dateSortie) }}
+    {{ form_row(formAddJeu.image) }}
+    {{ form_row(formAddJeu.avis) }}
+    {{ form_row(formAddJeu.note) }}
+    <div class="checkbox">
+        {{ form_row(formAddJeu.terminer) }}
+    </div>
+    <div class="checkbox">
+        {{ form_row(formAddJeu.platine) }}
+    </div>
+    {{ form_row(formAddJeu.Ajouter) }}
+
+
+    {{ form_end(formAddJeu) }}
+
+</div>
+
+{% endblock %}

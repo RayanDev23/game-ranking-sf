@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter jeu{% endblock %}
+
+{% block body %}
+
+<div class="w-4/5 image-jeu mr-auto ml-auto pt-10 pb-40">
+    <img class="w-full" src="{{ asset('uploads/images/' ~ jeu.image) }}" alt="{{ jeu.Titre }}">
+    <div class="my-5">
+        <h1 class="text-4xl text-center my-1 text-orange-400">{{jeu.titre}}</h1>
+        <p class="text-center text-orange-400 italic">Publié le {{ jeu.dateTest | date('d/m/Y')}}</p>
+        <p>Date de sortie : {{ jeu.dateSortie | date('d/m/Y')}}</p>
+        <p>Genre: {{ jeu.categorie }}</p>
+        <div class="flex gap-1 my-1.5">
+            <p>Progression: </p>
+            {% if jeu.terminer %}
+            <span class="bg-lime-700 text-white px-1.5 py-0.5">Terminer</span>
+            {% else %}
+            <span class="bg-rose-700 text-white px-1.5 py-0.5">En cours</span>
+            {% endif %}
+        </div>
+        {% if jeu.platine %}
+        <div class="text-white flex items-center my-1.5">
+            <p>Platine :</p>
+            <img class="icone-platine-show" src="{{asset('uploads/images/ps4-platine.png')}}" alt="platine playstation">
+        </div>
+        {% else %}
+        <div class="flex gap-1">
+            <p>Platine :</p>
+            <p class="bg-rose-700 text-white px-1.5 py-0.5">En cours</p>
+        </div>
+        {% endif %}
+        <p><span class="text-lg font-bold"><span class="text-xl">A</span>vis:</span> {{ jeu.avis }}</p>
+        <p class="text-lg font-bold">Note</p>
+        {% set note = jeu.note %}
+
+        <div class="set-size charts-container">
+            <div class="pie-wrapper progress-{{ note }}">
+                <span class="label">{{ note }}<span class="smaller"></span></span>
+                <div class="pie" style="{% if jeu.note > 4 %}clip: rect(auto, auto, auto, auto);{% endif %}">
+                    <div class="left-side half-circle" style="transform: rotate({{ (note / 10) * 360 }}deg);"></div>
+                    <div class="right-side half-circle" style="transform: rotate({{ note > 4 ? 180 : 0 }}deg);"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    {% endblock %}
